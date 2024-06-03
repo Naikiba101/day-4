@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-blue  { color: blue }
+        .text-green { color: green }
+        .text-large { font-size: 3em}
+        .bg-yellow  {  background-color: yellow }
+    </style>
+</head>
+<body>
+    <p id="p1" class="text-blue bg-yellow">Lorem ipsum dolor sit.</p>
+    <p id="p2" class="text-blue bg-yellow">Lorem ipsum dolor sit.</p>
+    <p id="p3" class="text-blue bg-yellow">Lorem ipsum dolor sit.</p>
+    <button onclick="toggle()">Toggle</button>
+    
+    <script>
+        const p1 = document.querySelector('#p1');
+        const p2 = document.querySelector('#p2');
+        const p3 = document.querySelector('#p3');
+
+        // 1- className: valeur de l'attribut classe.
+        console.log('---  1- className: ---')
+        console.log(p1.className)
+        p1.className = "text-large"
+
+        // 2- classList: array des classes css
+        console.log('---  2- classList: ---')
+        console.log(p2.classList);
+        console.log(p2.classList.length, p2.classList[0]);
+        p2.classList.add('text-large'); // ajouter la class "text-large"
+        p2.classList.remove('text-large'); // supprimer la class "text-large"
+        p2.classList.replace('text-blue','text-green') // remplacer la classe text-blue par text-green
+        console.log(p2.classList.contains('text-blue')) // vérifier si la classe "text-blue" existe
+        
+        // 3- toggle: toggle d'une classe:
+        // si la classe existe => supprimer
+        // si la classe n'existe pas => ajouter
+        function toggle(){
+            p3.classList.toggle('bg-yellow') 
+        }
+
+    </script>
+</body>
+</html>

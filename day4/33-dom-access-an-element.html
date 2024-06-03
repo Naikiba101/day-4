@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1- innerHTML/textContent: -->
+    <p id="p1">lorem ipsum <b>dolor</b></p>
+    <p id="p2">lorem ipsum <b>dolor</b></p>
+
+    <!-- 2- Accèder à l'attribut d'un élement -->
+    <hr>   
+    <a id="link1" href="#">Lien1</a>
+    <a id="link2" href="#">Lien2</a>
+    <a id="link3" href="#" target="_blank">Lien3</a>
+
+    <!-- 3- valeur d'un input: -->
+    <br><hr>
+    <input type="text" id="input" value="Valeur initiale"> <br>
+    <select id="select">
+        <option value="1">Option1</option>
+        <option value="2" selected >Option2</option>
+        <option value="3">Option3</option>
+    </select><br>
+    <input type="checkbox" id="checkbox1" checked >
+    <input type="checkbox" id="checkbox2" >
+
+    <!-- 3- le style css -->
+    <br> <hr>
+    <p id="par">lorem ipsum dolor</p>
+    
+    <script>
+        // 1- innerHTML/textContent: accéder au contenue de l'élement
+        console.log('--- 1- innerHTML/textContent: ---')
+        const p1 = document.querySelector('#p1');
+        const p2 = document.querySelector('#p2');
+        console.log("nodeName   : ", p1.nodeName)
+        console.log("innerHTML  : ", p1.innerHTML)
+        console.log("textContent: ", p2.textContent)
+
+        p1.innerHTML = "text <i> changed </i>"
+        p2.textContent = "text <i> changed </i>"
+
+        // 2- Accèder à l'attribut d'un élement
+        const link1 = document.querySelector('#link1');
+        const link2 = document.querySelector('#link2');
+        const link3 = document.querySelector('#link3');
+        console.log(link1.getAttribute('href')) // lire
+        link1.setAttribute('href', 'https://google.com'); // modifier
+        link2.setAttribute('target', '_blank'); // ajouter
+        link3.removeAttribute('target'); // suppprimer
+
+        // 3- valeur d'un input:
+        const input = document.querySelector('#input');
+        console.log(input.value)
+        input.value = "Valeur modifiée"
+
+        const select = document.querySelector('#select');
+        console.log(select.value)
+        select.value = 3
+
+        const checkbox1 = document.querySelector('#checkbox1');
+        const checkbox2 = document.querySelector('#checkbox2');
+        console.log(checkbox1.checked, checkbox2.checked)
+        // checkbox2.checked = true;
+
+        // 3- le style css
+        const par = document.querySelector('#par')
+        par.style.color = "#faaa02"
+        par.style.backgroundColor = "#a11"
+
+    </script>
+</body>
+
+</html>

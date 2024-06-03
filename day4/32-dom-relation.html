@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <ul>
+        <li class="item">Item1</li>
+        <li class="item">Item2</li>
+        <li class="item">Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+    </ul>
+
+    <table>
+        <tr><td>Col1</td><td><button onclick="selectLine(this)">Select</button></td></tr>
+        <tr><td>Col2</td><td><button onclick="selectLine(this)">Select</button></td></tr>
+        <tr><td>Col3</td><td><button onclick="selectLine(this)">Select</button></td></tr>
+        <tr><td>Col4</td><td><button onclick="selectLine(this)">Select</button></td></tr>
+        <tr><td>Col5</td><td><button onclick="selectLine(this)">Select</button></td></tr>
+    </table>
+    <script>
+        /*
+        Types noeuds:
+        -------------
+        - 1: Element (a, div, p...)
+        - 2: Attribut (href, src,...)
+        - 3: Text node (texte normal)
+        */
+
+        const ul = document.querySelector('ul');
+
+        // 1- childNodes: tous les enfants: Element et Text
+        console.log('--- 1- childNodes: ---')
+        const childs1 = ul.childNodes;
+        console.log(childs1.length) // 11
+        for (const child of childs1) {
+            console.log(child)
+        }
+
+        // 2- children: uniquement les enfants de type Element.
+        console.log('--- 2- children: ---')
+        const childs2 = ul.children;
+        console.log(childs2.length) // 5
+        for (const child of childs2) {
+            console.log(child)
+        }
+
+        // 3- parentElement: parent de type Element.
+        console.log('--- 3- parentElement: ---')
+        const parent = ul.parentElement;
+        console.log(parent)
+
+        // 4- previousSibling & previousElementSibling: frére précédent: 
+        console.log('--- 4- previousSibling & previousElementSibling: ---')
+        const previousSibling1 = ul.previousSibling; // Element, Text
+        const previousSibling2 = ul.previousElementSibling; // Element
+        console.log(previousSibling1);
+        console.log(previousSibling2)
+
+        // 5- nextSibling & nextElementSibling: frére prochain: 
+        console.log('--- 5- nextSibling & nextElementSibling: ---')
+        const nextSibling1 = ul.nextSibling; // Element, Text
+        const nextSibling2 = ul.nextElementSibling; // Element
+        console.log(nextSibling1);
+        console.log(nextSibling2)
+
+        // 6- this : l'élément courant
+        // exemple: mettre en jaune le fond de <tr> du bouton cliqué dans le tableau
+        function selectLine(button){
+            console.log(button)
+            button.parentElement.parentElement.style.backgroundColor = "yellow"
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+
+        }
+        .container>div{
+            width: 50%;
+            height: 50vh;
+        }
+        #div1{
+            background-color: green;
+        }
+        #div2{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="div1">
+            <button onclick="move(this)">Deplace moi</button>
+        </div>
+        <div id="div2"></div>
+    </div>
+
+    <script>
+        const div1 = document.querySelector('#div1');
+        const div2 = document.querySelector('#div2');
+    
+        function move(me){
+            console.log(me)
+            if(div1.contains(me)){
+                div2.append(me)
+            }else{
+                div1.append(me)
+            }
+        }
+    </script>
+</body>
+</html>

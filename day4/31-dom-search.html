@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Titre 1</h1>
+    <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, tempore!</p>
+    <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, porro.</p>
+    <ul>
+        <li class="item">Item1</li>
+        <li class="item">Item2</li>
+        <li class="item">Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+    </ul>
+
+    <div class="row">
+        <div class="col">Element1</div>
+        <div class="col">Element1</div>
+        <div class="col">Element1</div>
+        <div >Element1</div>
+
+    </div>
+    <script>
+        // 1- getElementById: recherche par ID:
+        console.log('--- 1- getElementById: ---')
+        let el1 = document.getElementById("p2")
+        console.log(el1)
+
+        // 2- getElementsByTagName: recherche par nom de tag:
+        console.log('--- 2- getElementsByTagName: ---')
+        let el2 = document.getElementsByTagName('p')
+        for(let el of el2){
+            el.style.color ='green'
+            console.log(el)
+        }
+        // 3- getElementsByClassName: recherche par nom de classe:
+        console.log('--- 3- getElementsByClassName: ---')
+        let el3 = document.getElementsByClassName('item')
+        for(let el of el3){
+            el.style.color ='blue'
+            console.log(el)
+        }
+
+        // 4- querySelector: recherche par selecteur CSS.
+        //    le premier element qui correspond au selecteur CSS.
+        console.log('--- 4- querySelector: ---')
+        let el4 = document.querySelector('.item')
+        console.log(el4)
+        
+        // 5- querySelector: recherche par selecteur CSS.
+        //    la liste des elements qui correspondent au selecteur CSS.
+        console.log('--- 5- querySelector: ---')
+        let el5 = document.querySelectorAll('.row .col')
+        for(let el of el5){
+            el.style.color ='red'
+            console.log(el)
+        }
+    </script>
+</body>

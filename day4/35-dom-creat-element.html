@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Exemple1:</h4>
+    <ul id="cities">
+        <li>Laayoune</li>
+    </ul>
+    <script>
+        const ulElement = document.querySelector('#cities')
+
+        // 1- append: ajouter élément enfant à la fin
+        // exmple: ajouter <li>Tantan</li> à la fin de <ul>.
+        const tantan = document.createElement('li');
+        tantan.textContent = 'Tantan'
+        ulElement.append(tantan);
+
+        // 2- prepend: ajouter élément enfant au début 
+        // exemple: ajoute <li>Agadir</li> au début de <ul>
+        const agadir = document.createElement('li');
+        agadir.textContent = 'Agadir'
+        ulElement.prepend(agadir);
+
+        //3- insertBefore: ajouter un élémént enfant avant un autre enfant
+        const tanger = document.createElement('li');
+        tanger.textContent = 'Tanger'
+        ulElement.insertBefore(tanger, tantan);
+
+        // 4- insertAdjacentElement: ajouter un élément à coté
+        const hr = document.createElement('hr');
+        ulElement.insertAdjacentElement('beforebegin',hr) // avant le début
+        // ulElement.insertAdjacentElement('afterend',hr) // aprés la fin
+
+    </script>
+</body>
+
+</html>
